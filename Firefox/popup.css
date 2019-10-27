@@ -1,0 +1,101 @@
+body {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    width: 300px;
+    font-size: 16px;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+input{
+    background: linear-gradient(124deg, #ff6349, #e8b71d, #88e297, #1ddde8, #7faaef, #e8a5ef);
+	background-size: 1800% 1800%;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 2px 2px;
+
+	-webkit-animation: rainbow 10s ease infinite;
+	-z-animation: rainbow 10s ease infinite;
+	-o-animation: rainbow 10s ease infinite;
+	animation: rainbow 10s ease infinite;
+}
+
+a{
+    color: #FF7070;
+}
+
+.download-video, .download-audio{
+    background-color: #4CAF50;
+    background-image: none;
+    color: white;
+}
+
+input:active{
+	background: #e5e5e5;
+}
+
+
+
+.loading_modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: rgba( 50, 50, 50, .9 ) url('../assets/loading.gif') 50% 50% no-repeat;
+}
+
+main.loading .loading_modal {
+    overflow: hidden;
+    display: block;
+}
+
+.failed_modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: rgba( 30, 30, 30, .9 ) url('../assets/download_failed.png') 50% 50% no-repeat;
+}
+
+main.failed .failed_modal {
+    overflow: hidden;
+    display: block;
+}

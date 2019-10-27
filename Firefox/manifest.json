@@ -1,0 +1,54 @@
+{
+	"manifest_version":2,
+	"name":"Universal Media Downloader",
+	"version":"1.0.0",
+	"description":"Save Video or Audio from anywhere!",
+	"applications":{
+		"gecko":{
+			"id":"UniversalMediaDownloader@sas41.ext",
+			"strict_min_version":"48.0"
+		}
+	},
+	"permissions":[
+		"tabs",
+		"downloads",
+		"storage"
+	],
+	"background":{
+		"scripts":[
+			"background.js"
+		],
+		"persistent":true
+	},
+	"content_scripts":[
+		{
+			"matches":[
+				"<all_urls>"
+			],
+			"css":[
+				"umdalert.css"
+			],
+			"js":[
+				"umdalert.js"
+			],
+			"run_at":"document_idle",
+			"match_about_blank": true,
+			"all_frames": true
+		}
+	],
+	"browser_action":{
+		"default_icon":{
+			"16":"icons/UMD_icon_16.png",
+			"32":"icons/UMD_icon_32.png",
+			"64":"icons/UMD_icon_64.png"
+		},
+		"default_title":"Universal Media Downloader",
+		"default_popup":"popup.html"
+	},
+	"icons":{
+		"16":"icons/UMD_icon_16.png",
+		"32":"icons/UMD_icon_32.png",
+		"64":"icons/UMD_icon_64.png",
+		"128":"icons/UMD_icon_128.png"
+	}
+}

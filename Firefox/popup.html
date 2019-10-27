@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="popup.css">
+	</head>
+	<body>
+		<main>
+			<h3>Please consider donating to help with server costs.</h3>
+			<a href="https:/paypal.me/sas41/2" target="_blank">
+			    <input type="button" value="Donate" />
+			</a>
+
+			<br>
+
+			<input id="showAbout" type="button" value="About UMD..." />
+
+			<div id="about" style="display:none">
+				<h4>
+					Universal Media Downloader by Berk "SAS41" Alyamach.
+					<br><br>
+					This addon/extention is powered by <a href="https://sasrip.cf/">www.SASRip.cf</a> which in turn is powered by <a href="https://ytdl-org.github.io/youtube-dl/index.html">Youtbe-DL</a>
+					</a>
+				</h4>
+			</div>
+
+			<br>
+			<form>
+				<input id="download-video" type="button" value="Download Video" />
+
+				<br>
+
+				<input id="download-audio" type="button" value="Download as MP3" />
+			</form>
+			<div class="loading_modal"></div>
+			<div class="failed_modal"></div>
+		</main>
+		<script type="text/javascript" src="popup.js"></script>
+		
+	</body>
+
+</html>
