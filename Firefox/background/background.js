@@ -1,6 +1,8 @@
+var coreAPI = browser;
+
 async function GetURL(isVideo) {
     try{
-        var gettingTabs = browser.tabs.query({currentWindow: true, active: true});
+        var gettingTabs = coreAPI.tabs.query({currentWindow: true, active: true});
         gettingTabs.then(function(tabs) {SendRequest(tabs, isVideo);}, LogError())
     }
     catch(error)
@@ -41,7 +43,7 @@ async function SendRequest(tabs, isVideo)
     var json = await response.json();
 
     if (json.success) {
-        downloadURI(json.downloadPath);
+        DownloadURI(json.downloadPath);
     }
     else if (json.Status === "file_processing") {
         // If file is processing from another request, check every 5 seconds.
@@ -56,8 +58,8 @@ async function SendRequest(tabs, isVideo)
 
 
 
-function downloadURI(downloadUrl) {
-    var downloading = browser.downloads.download({
+function DownloadURI(downloadUrl) {
+    var downloading = coreAPI.downloads.download({
         url : downloadUrl,
         conflictAction : 'uniquify'
     });
@@ -67,21 +69,16 @@ function downloadURI(downloadUrl) {
 
 function ShowAlertModal(url)
 {
-    browser.tabs.query({currentWindow: true, active: true})
-                .then(function (tabs) { sendMessageToTab(tabs, url); })
+    coreAPI.tabs.query({currentWindow: true, active: true})
+                .then(function (tabs) { SendMessageToTab(tabs, url); })
                 .catch(LogError);
 }
 
 
 
-function sendMessageToTab(tabs, url) {
+function SendMessageToTab(tabs, url) {
     for (let tab of tabs) {
-        browser.tabs.sendMessage(tab.id, {error_url: url})
-                    .then(response =>   {
-                                            console.log("Message from the content script:");
-                                            console.log(response.response);
-                                        })
-                    .catch(LogError);
+        coreAPI.tabs.sendMessage(tab.id, {error_url: url});
     }
 }
 
@@ -90,5 +87,5 @@ function sendMessageToTab(tabs, url) {
 function LogError(error)
 {
     console.log(error);
-    console.log(browser.runtime.lastError);
+    console.log(coreAPI.runtime.lastError);
 }

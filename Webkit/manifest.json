@@ -1,6 +1,6 @@
 {
 	"manifest_version":2,
-	"name":"Universal Media Downloader",
+	"name":"Media Reaper",
 	"version":"1.0.0",
 	"description":"Save Video or Audio from anywhere!",
 	"permissions":[
@@ -10,7 +10,7 @@
 	],
 	"background":{
 		"scripts":[
-			"background.js"
+			"/background/background.js"
 		],
 		"persistent":true
 	},
@@ -20,29 +20,32 @@
 				"<all_urls>"
 			],
 			"css":[
-				"umdalert.css"
+				"/content/content.css"
 			],
 			"js":[
-				"umdalert.js"
+				"/content/content.js"
 			],
 			"run_at":"document_idle",
 			"match_about_blank": true,
-			"all_frames": true
+			"all_frames": false
 		}
 	],
+    "web_accessible_resources": [
+        "alert/media-reaper-alert-modal.html"
+    ],
 	"browser_action":{
 		"default_icon":{
-			"16":"icons/UMD_icon_16.png",
-			"32":"icons/UMD_icon_32.png",
-			"64":"icons/UMD_icon_64.png"
+			"16":"assets/icons/icon_16.png",
+			"32":"assets/icons/icon_32.png",
+			"64":"assets/icons/icon_64.png"
 		},
-		"default_title":"Universal Media Downloader",
-		"default_popup":"popup.html"
+		"default_title":"Media Reaper",
+		"default_popup":"/popup/popup.html"
 	},
 	"icons":{
-		"16":"icons/UMD_icon_16.png",
-		"32":"icons/UMD_icon_32.png",
-		"64":"icons/UMD_icon_64.png",
-		"128":"icons/UMD_icon_128.png"
+		"16":"assets/icons/icon_16.png",
+		"32":"assets/icons/icon_32.png",
+		"64":"assets/icons/icon_64.png",
+		"128":"assets/icons/icon_128.png"
 	}
 }

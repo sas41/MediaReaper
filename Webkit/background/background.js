@@ -1,20 +1,24 @@
+var coreAPI = chrome;
+
 async function GetURL(isVideo) {
     try{
-        chrome.tabs.getSelected(null, function(tab) {
+        coreAPI.tabs.getSelected(null, function(tab) {
             tabUrl = tab.url;
-            SendRequest(tab.url, isVideo);
+            SendRequest([tab], isVideo);
         });
     }
     catch(error)
     {
-        LogError(error)
+        console.log(error)
     }
 }
 
 
 
-async function SendRequest(url, isVideo)
+async function SendRequest(tabs, isVideo)
 {
+    var url = tabs[0].url;
+
     var apiLink = '/api/DownloadAPI/v1.0/audio/';
 
     if (isVideo) {
@@ -41,7 +45,7 @@ async function SendRequest(url, isVideo)
     var json = await response.json();
 
     if (json.success) {
-        downloadURI(json.downloadPath);
+        DownloadURI(json.downloadPath);
     }
     else if (json.Status === "file_processing") {
         // If file is processing from another request, check every 5 seconds.
@@ -56,8 +60,8 @@ async function SendRequest(url, isVideo)
 
 
 
-function downloadURI(downloadUrl) {
-    var downloading = chrome.downloads.download({
+function DownloadURI(downloadUrl) {
+    var downloading = coreAPI.downloads.download({
         url : downloadUrl,
         conflictAction : 'uniquify'
     });
@@ -67,16 +71,17 @@ function downloadURI(downloadUrl) {
 
 function ShowAlertModal(url)
 {
-    chrome.tabs.getSelected(null, function(tab) {
-        tabUrl = tab;
-        SendMessageToTab(tab.id, url);
+    coreAPI.tabs.getSelected(null, function(tab) {
+        SendMessageToTab([tab], url);
     });
 }
 
 
 
-function SendMessageToTab(tabid, url) {
-    chrome.tabs.sendMessage(tabid, {error_url: url});
+function SendMessageToTab(tabs, url) {
+    for (let tab of tabs) {
+        coreAPI.tabs.sendMessage(tab.id, {error_url: url});
+    }
 }
 
 
@@ -84,5 +89,5 @@ function SendMessageToTab(tabid, url) {
 function LogError(error)
 {
     console.log(error);
-    console.log(chrome.runtime.lastError);
+    console.log(coreAPI.runtime.lastError);
 }

@@ -1,3 +1,5 @@
+var coreAPI = browser;
+
 var isVideo = false;
 
 async function AccessBackgroundPage(page)
@@ -9,31 +11,22 @@ async function BackgroundPage(isVid) {
     try {
         PleaseWait();
         isVideo = isVid;
-        AccessBackgroundPage(chrome.extension.getBackgroundPage());
+        var getting = coreAPI.runtime.getBackgroundPage();
+        getting.then(AccessBackgroundPage, console.log);
     }
     catch (error) {
-        Fail();
+        console.log(error);
     }
 }
 document.getElementById('download-video').addEventListener('click', function(){BackgroundPage(true);});
 document.getElementById('download-audio').addEventListener('click', function(){BackgroundPage(false);});
 
 
+
 function PleaseWait() {
     var element = document.getElementsByTagName("main")[0];
     element.classList.add("loading");
 }
-
-
-function Fail(page = null) {
-    var element = document.getElementsByTagName("main")[0];
-    element.classList.remove("loading");
-    element.classList.add("failed");
-}
-
-
-
-
 
 
 

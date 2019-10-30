@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Media Reaper Alert</title>
+		<style>
+			body {
+			  top: 0;
+			  left: 0;
+			  margin: 0 !important;
+			  padding: 0 !important;
+			  text-align: center;
+			}
+
+			.modal {
+			  background-color: rgb(0,0,0) !important;
+			  background-color: rgba(0,0,0,0.4) !important;
+
+			  -webkit-animation-name: fadeIn;
+			  -webkit-animation-duration: 0.4s;
+			  animation-name: fadeIn;
+			  animation-duration: 0.4s;
+
+			}
+
+			/* Modal Content */
+			.modal-content {
+			  -webkit-animation-name: slideIn;
+			  -webkit-animation-duration: 0.4s;
+			  animation-name: slideIn;
+			  animation-duration: 0.4s;
+			}
+
+			/* The Close Button */
+			.modal-close {
+			  color: white;
+			  float: right;
+			  font-size: 2em !important;
+			  font-weight: bold !important;
+			}
+
+			.modal-close:hover,
+			.modal-close:focus {
+			  color: #000;
+			  text-decoration: none !important;
+			  cursor: pointer !important;
+			}
+
+			.modal-header {
+			  padding: 0.5em !important;
+			  color: #101010;
+			  background-color: #FF7070;
+			}
+
+			.modal-body {
+			  padding: 2px 16px !important;
+			  color: white;
+			  background-color: #101010;
+			}
+
+			/* Font Sizes and Colors */
+
+			h2
+			{
+			  color: #101010 !important;
+			  font-size: 2em !important;
+			}
+
+			p {
+			  color: white !important;
+			  font-size: 1em !important;
+			}
+
+			a{
+			  color: #FF7070 !important;
+			  font-size: 1em !important;
+			}
+
+			a:visited {
+			  color: #FF7070 !important;
+			  font-size: 1em !important;
+			}
+
+
+
+			/* Animations */
+
+			@-webkit-keyframes slideIn {
+			  from {top: -300px; opacity: 0} 
+			  to {top: 0; opacity: 1}
+			}
+
+			@keyframes slideIn {
+			  from {top: -300px; opacity: 0}
+			  to {top: 0; opacity: 1}
+			}
+
+			@-webkit-keyframes fadeIn {
+			  from {opacity: 0} 
+			  to {opacity: 1}
+			}
+
+			@keyframes fadeIn {
+			  from {opacity: 0} 
+			  to {opacity: 1}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="MediaReaperDownloadAlertModal" class="modal">
+			<div class="modal-content">
+
+			<div class="modal-header">
+				<span class="modal-close">&times;</span>
+				<h2 class="h2">Media Reaper: A download has failed!</h2>
+			</div>
+
+			<div class="modal-body">
+				
+				<p class="p">Your download of [<a class="a" href="MediaReaper-download-failed-url">MediaReaper-download-failed-url</a>] has failed.</p>
+				<p class="p">Please try again later, or send an e-mail about your issue to <a class="a" href=" mailto:berkonvo@gmail.com?subject=Media%20Reaper%20Issue">berkonvo@gmail.com</a>.</p>
+
+			</div>
+
+			</div>
+		</div>
+	</body>
+</html>
