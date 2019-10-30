@@ -8,35 +8,42 @@
 	</head>
 	<body>
 		<main>
-			<h3>Please consider donating to help with server costs.</h3>
-			<a href="https:/paypal.me/sas41/2" target="_blank" target="_blank">
-			    <input type="button" value="Donate" />
-			</a>
 
-			<br>
+			<div id="showAbout"></div>
 
-			<input id="showAbout" type="button" value="About UMD..." />
+			<div id="logo"></div>
 
 			<div id="about" style="display:none">
-				<h4>
+				<p>
 					Media Reaper by <a href="https://github.com/sas41" target="_blank">Berk "SAS41" Alyamach</a>.
-					<br><br>
+				</p>
+				<p>
 					Logo and Design by <a href="https://www.instagram.com/thegetsoff/" target="_blank">"Getsoff"</a>.
-					<br><br>
+				</p>
+				<p>
 					This addon/extention is powered by <a href="https://sasrip.cf/" target="_blank">www.SASRip.cf</a> which in turn is powered by <a href="https://ytdl-org.github.io/youtube-dl/index.html" target="_blank">youtbe-dl</a> and <a href="https://www.ffmpeg.org/" target="_blank">ffmpeg</a>.
-				</h4>
+				</p>
 			</div>
 
-			<br>
-			<form>
-				<input id="download-video" type="button" value="Download Video" />
+			<div id="download-video"></div>
 
+			<div id="download-audio"></div>
+
+			<a href="https:/paypal.me/sas41/2" target="_blank" target="_blank">
+				<div id="donate"></div>
+			</a>
+
+			<p>Please consider donating,<br>
+				your generous contribution will help keep Media Reaper alive.
+			</p>
+
+
+			<footer>
+				No &copy; &bull; Media <span class="red-text">Reaper</span> &bull; Some Rights Reserved
 				<br>
-
-				<input id="download-audio" type="button" value="Download as MP3" />
-			</form>
+				<a href="https://sasrip.cf/Home/Privacy" target="_blank">Privacy Policy</a>
+			</footer>
 			<div class="loading_modal"></div>
-			<div class="failed_modal"></div>
 		</main>
 		<script type="text/javascript" src="popup.js"></script>
 		

@@ -1,70 +1,117 @@
+@font-face {
+    font-family: 'crescentregular';
+    src: url('../assets/fonts/crescent-regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/crescent-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    /* Browser Limitations */
+    height: 600px !important;
+    max-width: 800px !important;
+    max-height: 600px !important;
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    overflow-x: hidden !important;
+}
+
 body {
-    background-color: #333;
+    background-color: #141414;
     color: white;
     text-align: center;
-    width: 300px;
-    font-size: 16px;
+
+    width: 20rem;
+    margin: 0, 0.5rem;
+
+    font-family: "Arial", "Helvetica", "sans-serif";
+    font-family: 'crescentregular';
+    font-size: 1rem;
+    position: relative;
+    
+    overflow-x: hidden !important;
 }
 
-@-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+footer {
+    font-size: 0.8rem;
 }
 
-@-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
+a, .red-text {
+    color: #e82d2d;
 }
 
-@-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-
-@keyframes rainbow { 
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-
-input{
-    background: linear-gradient(124deg, #ff6349, #e8b71d, #88e297, #1ddde8, #7faaef, #e8a5ef);
-	background-size: 1800% 1800%;
-    border: none;
-    border-radius: 12px;
-    color: black;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
+#showAbout {
+    content: url('../assets/buttons/information.svg');
+    width: 2rem;
+    height: auto;
+    background-size: contain;
+    cursor: pointer;
     display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 2px 2px;
 
-	-webkit-animation: rainbow 10s ease infinite;
-	-z-animation: rainbow 10s ease infinite;
-	-o-animation: rainbow 10s ease infinite;
-	animation: rainbow 10s ease infinite;
+    position: absolute;
+    float: right;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 100;
 }
 
-a{
-    color: #FF7070;
+#about {
+    margin-left: auto;
+    margin-right: auto;
+    width: 17rem;
+    word-wrap: break-word;
+    
+    overflow-x: hidden !important;
 }
 
-.download-video, .download-audio{
-    background-color: #4CAF50;
-    background-image: none;
-    color: white;
+#logo {
+    content: url('../assets/logo.svg');
+    width: 10rem;
+    height: auto;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-input:active{
-	background: #e5e5e5;
+#download-video {
+    content: url('../assets/buttons/video-button.svg');
+    width: 15rem;
+    height: auto;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    clear:both;
 }
 
+#download-audio {
+    content: url('../assets/buttons/audio-button.svg');
+    width: 15rem;
+    height: auto;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    clear:both;
+}
 
+#donate {
+    content: url('../assets/buttons/donation-button.svg');
+    width: 10rem;
+    height: auto;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    clear:both;
+
+    margin-top: 2rem;
+}
 
 .loading_modal {
     display: none;
@@ -79,23 +126,6 @@ input:active{
 }
 
 main.loading .loading_modal {
-    overflow: hidden;
-    display: block;
-}
-
-.failed_modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    background: rgba( 30, 30, 30, .9 ) url('../assets/download_failed.png') 50% 50% no-repeat;
-}
-
-main.failed .failed_modal {
     overflow: hidden;
     display: block;
 }

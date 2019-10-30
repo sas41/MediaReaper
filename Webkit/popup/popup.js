@@ -25,6 +25,7 @@ document.getElementById('download-audio').addEventListener('click', function(){B
 function PleaseWait() {
     var element = document.getElementsByTagName("main")[0];
     element.classList.add("loading");
+    setTimeout(function () { window.close(); }, 3000);
 }
 
 
@@ -33,7 +34,7 @@ function About()
 {
     if(document.getElementById('about').style.display=='none')
     {
-            document.getElementById('about') .style.display=''
+            document.getElementById('about') .style.display='block'
     }
     else
     {
