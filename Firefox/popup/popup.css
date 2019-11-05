@@ -7,10 +7,8 @@
 }
 
 html {
-    /* Browser Limitations */
-    height: 600px !important;
-    max-width: 800px !important;
-    max-height: 600px !important;
+    width: auto;
+    height: 600px;
     margin: 0;
     padding: 0;
 
@@ -26,19 +24,18 @@ body {
     color: white;
     text-align: center;
 
-    width: 20rem;
     margin: 0, 0.5rem;
 
     font-family: "Arial", "Helvetica", "sans-serif";
     font-family: 'crescentregular';
-    font-size: 1rem;
+    font-size: 2.5vh;
     position: relative;
     
     overflow-x: hidden !important;
 }
 
 footer {
-    font-size: 0.8rem;
+    font-size: 2vh;
 }
 
 a, .red-text {
@@ -47,23 +44,23 @@ a, .red-text {
 
 #showAbout {
     content: url('../assets/buttons/information.svg');
-    width: 2rem;
-    height: auto;
+    height: 6vh;
+    width: auto;
     background-size: contain;
     cursor: pointer;
     display: inline-block;
 
     position: absolute;
-    float: right;
+    float: none;
     top: 0.5rem;
-    right: 0.5rem;
+    left: calc(50vw + 8rem);
     z-index: 100;
 }
 
 #about {
     margin-left: auto;
     margin-right: auto;
-    width: 17rem;
+    width: 70vw;
     word-wrap: break-word;
     
     overflow-x: hidden !important;
@@ -71,45 +68,38 @@ a, .red-text {
 
 #logo {
     content: url('../assets/logo.svg');
-    width: 10rem;
-    height: auto;
+    height: 30vh;
+    width: auto;
     background-size: contain;
-    cursor: pointer;
     display: inline-block;
 
     margin-top: 1rem;
-    margin-bottom: 1rem;
+}
+
+.centered-button {
+    background-size: contain;
+    height: 12vh;
+    width: auto;
+
+    margin-top: 1rem;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear:both;
 }
 
 #download-video {
     content: url('../assets/buttons/video-button.svg');
-    width: 15rem;
-    height: auto;
-    background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    clear:both;
 }
 
 #download-audio {
     content: url('../assets/buttons/audio-button.svg');
-    width: 15rem;
-    height: auto;
-    background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    clear:both;
 }
 
 #donate {
     content: url('../assets/buttons/donation-button.svg');
-    width: 10rem;
-    height: auto;
-    background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    clear:both;
-
+    height: 11vh;
     margin-top: 2rem;
 }
 
