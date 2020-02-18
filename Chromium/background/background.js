@@ -30,10 +30,10 @@ async function SendRequest(tabs, isVideo)
     headers.append('Content-Type', 'application/json');
 
     var request_body = {
-        "DownloadURL": url
+        "DownloadURL": url,
+        "CallSource": "MR Chrmium"
     };
 
-    console.log(url);
     var init = {
         method: 'POST',
         headers: headers,
@@ -47,9 +47,9 @@ async function SendRequest(tabs, isVideo)
     if (json.success) {
         DownloadURI(json.downloadPath);
     }
-    else if (json.Status === "file_processing") {
+    else if (json.status === "file_processing") {
         // If file is processing from another request, check every 5 seconds.
-        setTimeout(function () { Download(url, isVideo); }, 5000);
+        setTimeout(function () { SendRequest(tabs, isVideo); }, 5000);
     }
     else
     {
