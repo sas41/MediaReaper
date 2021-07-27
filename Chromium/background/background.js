@@ -41,7 +41,7 @@ async function SendRequest(tabs, isVideo)
     };
 
 
-    var response = await fetch("https://sasrip.cf" + apiLink, init);
+    var response = await fetch("https://sasrip.sas41.com" + apiLink, init);
     var json = await response.json();
 
     if (json.success) {
